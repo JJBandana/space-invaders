@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxluu1o6rw24a"]
+
+[ext_resource type="Texture2D" uid="uid://dpkrep7rj50vt" path="res://assets/SpaceInvaders_Background.png" id="1_xqwg7"]
+[ext_resource type="PackedScene" uid="uid://b2fbfucxp48js" path="res://ship.tscn" id="2_50j5k"]
+[ext_resource type="Script" path="res://pathFollow.gd" id="2_ebnmj"]
+[ext_resource type="PackedScene" uid="uid://cnvjyx3ksypag" path="res://army.tscn" id="3_cw8sl"]
+
+[sub_resource type="Curve2D" id="Curve2D_hffwy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 85, 40, 0, 0, 0, 0, 170, 40, 0, 0, 0, 0, 170, 52, 0, 0, 0, 0, 85, 52, 0, 0, 0, 0, 85, 64)
+}
+point_count = 5
+
+[node name="World" type="Node2D"]
+
+[node name="SpaceInvadersBackground" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("1_xqwg7")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 1, 256, 224)
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_hffwy")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(85, 40)
+rotates = false
+script = ExtResource("2_ebnmj")
+
+[node name="Army" parent="Path2D2/PathFollow2D" instance=ExtResource("3_cw8sl")]
+
+[node name="Timer" type="Timer" parent="Path2D2/PathFollow2D"]
+autostart = true
+
+[node name="Ship" parent="." instance=ExtResource("2_50j5k")]
+position = Vector2(128, 210)
+
+[connection signal="timeout" from="Path2D2/PathFollow2D/Timer" to="Path2D2/PathFollow2D" method="_on_timer_timeout"]

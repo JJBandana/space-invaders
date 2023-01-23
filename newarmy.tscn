@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b53neemxli8kw"]
+
+[ext_resource type="Script" path="res://armycreator.gd" id="1_n71l2"]
+
+[node name="Army" type="Node2D"]
+script = ExtResource("1_n71l2")

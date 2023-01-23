@@ -1,0 +1,240 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnvjyx3ksypag"]
+
+[ext_resource type="PackedScene" uid="uid://o2qo4673fj3s" path="res://alien.tscn" id="1_bevpr"]
+
+[node name="Army" type="Node2D"]
+
+[node name="Row0" type="Node2D" parent="."]
+position = Vector2(-80, -28)
+
+[node name="Alien" parent="Row0" instance=ExtResource("1_bevpr")]
+position = Vector2(5, 4)
+svalue = 0
+
+[node name="Alien2" parent="Row0" instance=ExtResource("1_bevpr")]
+position = Vector2(20, 4)
+svalue = 0
+
+[node name="Alien3" parent="Row0" instance=ExtResource("1_bevpr")]
+position = Vector2(35, 4)
+svalue = 0
+
+[node name="Alien4" parent="Row0" instance=ExtResource("1_bevpr")]
+position = Vector2(50, 4)
+svalue = 0
+
+[node name="Alien5" parent="Row0" instance=ExtResource("1_bevpr")]
+position = Vector2(65, 4)
+svalue = 0
+
+[node name="Alien6" parent="Row0" instance=ExtResource("1_bevpr")]
+position = Vector2(80, 4)
+svalue = 0
+
+[node name="Alien7" parent="Row0" instance=ExtResource("1_bevpr")]
+position = Vector2(95, 4)
+svalue = 0
+
+[node name="Alien8" parent="Row0" instance=ExtResource("1_bevpr")]
+position = Vector2(110, 4)
+svalue = 0
+
+[node name="Alien9" parent="Row0" instance=ExtResource("1_bevpr")]
+position = Vector2(125, 4)
+svalue = 0
+
+[node name="Alien10" parent="Row0" instance=ExtResource("1_bevpr")]
+position = Vector2(140, 4)
+svalue = 0
+
+[node name="Alien11" parent="Row0" instance=ExtResource("1_bevpr")]
+position = Vector2(155, 4)
+svalue = 0
+
+[node name="Row1" type="Node2D" parent="."]
+position = Vector2(-80, -16)
+
+[node name="Alien" parent="Row1" instance=ExtResource("1_bevpr")]
+position = Vector2(5, 4)
+svalue = 0
+
+[node name="Alien2" parent="Row1" instance=ExtResource("1_bevpr")]
+position = Vector2(20, 4)
+svalue = 0
+
+[node name="Alien3" parent="Row1" instance=ExtResource("1_bevpr")]
+position = Vector2(35, 4)
+svalue = 0
+
+[node name="Alien4" parent="Row1" instance=ExtResource("1_bevpr")]
+position = Vector2(50, 4)
+svalue = 0
+
+[node name="Alien5" parent="Row1" instance=ExtResource("1_bevpr")]
+position = Vector2(65, 4)
+svalue = 0
+
+[node name="Alien6" parent="Row1" instance=ExtResource("1_bevpr")]
+position = Vector2(80, 4)
+svalue = 0
+
+[node name="Alien7" parent="Row1" instance=ExtResource("1_bevpr")]
+position = Vector2(95, 4)
+svalue = 0
+
+[node name="Alien8" parent="Row1" instance=ExtResource("1_bevpr")]
+position = Vector2(110, 4)
+svalue = 0
+
+[node name="Alien9" parent="Row1" instance=ExtResource("1_bevpr")]
+position = Vector2(125, 4)
+svalue = 0
+
+[node name="Alien10" parent="Row1" instance=ExtResource("1_bevpr")]
+position = Vector2(140, 4)
+svalue = 0
+
+[node name="Alien11" parent="Row1" instance=ExtResource("1_bevpr")]
+position = Vector2(155, 4)
+svalue = 0
+
+[node name="Row2" type="Node2D" parent="."]
+position = Vector2(-80, -4)
+
+[node name="Alien" parent="Row2" instance=ExtResource("1_bevpr")]
+position = Vector2(5, 4)
+svalue = 0
+
+[node name="Alien2" parent="Row2" instance=ExtResource("1_bevpr")]
+position = Vector2(20, 4)
+svalue = 0
+
+[node name="Alien3" parent="Row2" instance=ExtResource("1_bevpr")]
+position = Vector2(35, 4)
+svalue = 0
+
+[node name="Alien4" parent="Row2" instance=ExtResource("1_bevpr")]
+position = Vector2(50, 4)
+svalue = 0
+
+[node name="Alien5" parent="Row2" instance=ExtResource("1_bevpr")]
+position = Vector2(65, 4)
+svalue = 0
+
+[node name="Alien6" parent="Row2" instance=ExtResource("1_bevpr")]
+position = Vector2(80, 4)
+svalue = 0
+
+[node name="Alien7" parent="Row2" instance=ExtResource("1_bevpr")]
+position = Vector2(95, 4)
+svalue = 0
+
+[node name="Alien8" parent="Row2" instance=ExtResource("1_bevpr")]
+position = Vector2(110, 4)
+svalue = 0
+
+[node name="Alien9" parent="Row2" instance=ExtResource("1_bevpr")]
+position = Vector2(125, 4)
+svalue = 0
+
+[node name="Alien10" parent="Row2" instance=ExtResource("1_bevpr")]
+position = Vector2(140, 4)
+svalue = 0
+
+[node name="Alien11" parent="Row2" instance=ExtResource("1_bevpr")]
+position = Vector2(155, 4)
+svalue = 0
+
+[node name="Row3" type="Node2D" parent="."]
+position = Vector2(-80, 8)
+
+[node name="Alien" parent="Row3" instance=ExtResource("1_bevpr")]
+position = Vector2(5, 4)
+svalue = 0
+
+[node name="Alien2" parent="Row3" instance=ExtResource("1_bevpr")]
+position = Vector2(20, 4)
+svalue = 0
+
+[node name="Alien3" parent="Row3" instance=ExtResource("1_bevpr")]
+position = Vector2(35, 4)
+svalue = 0
+
+[node name="Alien4" parent="Row3" instance=ExtResource("1_bevpr")]
+position = Vector2(50, 4)
+svalue = 0
+
+[node name="Alien5" parent="Row3" instance=ExtResource("1_bevpr")]
+position = Vector2(65, 4)
+svalue = 0
+
+[node name="Alien6" parent="Row3" instance=ExtResource("1_bevpr")]
+position = Vector2(80, 4)
+svalue = 0
+
+[node name="Alien7" parent="Row3" instance=ExtResource("1_bevpr")]
+position = Vector2(95, 4)
+svalue = 0
+
+[node name="Alien8" parent="Row3" instance=ExtResource("1_bevpr")]
+position = Vector2(110, 4)
+svalue = 0
+
+[node name="Alien9" parent="Row3" instance=ExtResource("1_bevpr")]
+position = Vector2(125, 4)
+svalue = 0
+
+[node name="Alien10" parent="Row3" instance=ExtResource("1_bevpr")]
+position = Vector2(140, 4)
+svalue = 0
+
+[node name="Alien11" parent="Row3" instance=ExtResource("1_bevpr")]
+position = Vector2(155, 4)
+svalue = 0
+
+[node name="Row4" type="Node2D" parent="."]
+position = Vector2(-80, 20)
+
+[node name="Alien" parent="Row4" instance=ExtResource("1_bevpr")]
+position = Vector2(5, 4)
+svalue = 0
+
+[node name="Alien2" parent="Row4" instance=ExtResource("1_bevpr")]
+position = Vector2(20, 4)
+svalue = 0
+
+[node name="Alien3" parent="Row4" instance=ExtResource("1_bevpr")]
+position = Vector2(35, 4)
+svalue = 0
+
+[node name="Alien4" parent="Row4" instance=ExtResource("1_bevpr")]
+position = Vector2(50, 4)
+svalue = 0
+
+[node name="Alien5" parent="Row4" instance=ExtResource("1_bevpr")]
+position = Vector2(65, 4)
+svalue = 0
+
+[node name="Alien6" parent="Row4" instance=ExtResource("1_bevpr")]
+position = Vector2(80, 4)
+svalue = 0
+
+[node name="Alien7" parent="Row4" instance=ExtResource("1_bevpr")]
+position = Vector2(95, 4)
+svalue = 0
+
+[node name="Alien8" parent="Row4" instance=ExtResource("1_bevpr")]
+position = Vector2(110, 4)
+svalue = 0
+
+[node name="Alien9" parent="Row4" instance=ExtResource("1_bevpr")]
+position = Vector2(125, 4)
+svalue = 0
+
+[node name="Alien10" parent="Row4" instance=ExtResource("1_bevpr")]
+position = Vector2(140, 4)
+svalue = 0
+
+[node name="Alien11" parent="Row4" instance=ExtResource("1_bevpr")]
+position = Vector2(155, 4)
+svalue = 0

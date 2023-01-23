@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://o2qo4673fj3s"]
+
+[ext_resource type="Script" path="res://alien.gd" id="1_4efr5"]
+[ext_resource type="Texture2D" uid="uid://fcodyj6pjpm1" path="res://assets/SpaceInvaders.png" id="1_pqgy1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sihao"]
+size = Vector2(11, 9)
+
+[sub_resource type="Animation" id="Animation_q1ei1"]
+resource_name = "Die"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [8, 11, 14]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"delete"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_5ovyy"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_jr81k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_046an"]
+_data = {
+"Die": SubResource("Animation_q1ei1"),
+"Idle": SubResource("Animation_5ovyy"),
+"RESET": SubResource("Animation_jr81k")
+}
+
+[node name="Alien" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_4efr5")
+svalue = 5
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_pqgy1")
+hframes = 3
+vframes = 5
+frame = 8
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_sihao")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+libraries = {
+"": SubResource("AnimationLibrary_046an")
+}

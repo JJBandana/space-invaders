@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2fbfucxp48js"]
+
+[ext_resource type="Script" path="res://ship.gd" id="1_t5ird"]
+[ext_resource type="Texture2D" uid="uid://fcodyj6pjpm1" path="res://assets/SpaceInvaders.png" id="2_6vwow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg3fh"]
+size = Vector2(9, 10)
+
+[node name="Ship" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_t5ird")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_6vwow")
+region_enabled = true
+region_rect = Rect2(68, 4, 9, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yg3fh")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -9)

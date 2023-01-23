@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://alien.gd" id="1_4efr5"]
 [ext_resource type="Texture2D" uid="uid://fcodyj6pjpm1" path="res://assets/SpaceInvaders.png" id="1_pqgy1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sihao"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1mb5"]
 size = Vector2(11, 9)
 
-[sub_resource type="Animation" id="Animation_q1ei1"]
+[sub_resource type="Animation" id="Animation_d3lvb"]
 resource_name = "Die"
 length = 0.4
 loop_mode = 1
@@ -37,7 +37,7 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_5ovyy"]
+[sub_resource type="Animation" id="Animation_omwpn"]
 resource_name = "Idle"
 length = 2.0
 loop_mode = 1
@@ -54,7 +54,7 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="Animation" id="Animation_jr81k"]
+[sub_resource type="Animation" id="Animation_s0423"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -69,16 +69,15 @@ tracks/0/keys = {
 "values": [8]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_046an"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xw1i"]
 _data = {
-"Die": SubResource("Animation_q1ei1"),
-"Idle": SubResource("Animation_5ovyy"),
-"RESET": SubResource("Animation_jr81k")
+"Die": SubResource("Animation_d3lvb"),
+"Idle": SubResource("Animation_omwpn"),
+"RESET": SubResource("Animation_s0423")
 }
 
 [node name="Alien" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_4efr5")
-svalue = 5
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -92,10 +91,13 @@ region_rect = Rect2(0, 0, 48, 80)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
 position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_sihao")
+shape = SubResource("RectangleShape2D_x1mb5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
 libraries = {
-"": SubResource("AnimationLibrary_046an")
+"": SubResource("AnimationLibrary_2xw1i")
 }
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 8)

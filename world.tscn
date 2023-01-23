@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dpkrep7rj50vt" path="res://assets/SpaceInvaders_Background.png" id="1_xqwg7"]
 [ext_resource type="PackedScene" uid="uid://b2fbfucxp48js" path="res://ship.tscn" id="2_50j5k"]
 [ext_resource type="Script" path="res://pathFollow.gd" id="2_ebnmj"]
-[ext_resource type="PackedScene" uid="uid://cnvjyx3ksypag" path="res://army.tscn" id="3_cw8sl"]
+[ext_resource type="PackedScene" uid="uid://b53neemxli8kw" path="res://newarmy.tscn" id="5_80t8q"]
 
 [sub_resource type="Curve2D" id="Curve2D_hffwy"]
 _data = {
@@ -29,12 +29,12 @@ position = Vector2(85, 40)
 rotates = false
 script = ExtResource("2_ebnmj")
 
-[node name="Army" parent="Path2D2/PathFollow2D" instance=ExtResource("3_cw8sl")]
-
 [node name="Timer" type="Timer" parent="Path2D2/PathFollow2D"]
 autostart = true
 
 [node name="Ship" parent="." instance=ExtResource("2_50j5k")]
 position = Vector2(128, 210)
+
+[node name="Army" parent="." instance=ExtResource("5_80t8q")]
 
 [connection signal="timeout" from="Path2D2/PathFollow2D/Timer" to="Path2D2/PathFollow2D" method="_on_timer_timeout"]

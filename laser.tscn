@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://fcodyj6pjpm1" path="res://assets/SpaceInvaders.png" id="1_2ooq4"]
 [ext_resource type="Script" path="res://laser.gd" id="1_t57cu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1om3t"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gncei"]
 size = Vector2(1, 6)
 
 [node name="Node2D" type="Area2D"]
@@ -19,7 +19,7 @@ region_rect = Rect2(39, 5, 1, 6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_1om3t")
+shape = SubResource("RectangleShape2D_gncei")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-0.5, 0)

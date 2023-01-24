@@ -15,6 +15,9 @@ region_enabled = true
 region_rect = Rect2(1, 1, 256, 224)
 
 [node name="Ship" parent="." instance=ExtResource("2_50j5k")]
-position = Vector2(128, 210)
+position = Vector2(20, 210)
 
 [node name="Army" parent="." instance=ExtResource("5_80t8q")]
+
+[node name="SpawnPosition" type="Marker2D" parent="."]
+position = Vector2(20, 210)

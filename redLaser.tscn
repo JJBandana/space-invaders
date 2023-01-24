@@ -3,10 +3,25 @@
 [ext_resource type="Script" path="res://redLaser.gd" id="1_0phqk"]
 [ext_resource type="Texture2D" uid="uid://fcodyj6pjpm1" path="res://assets/SpaceInvaders.png" id="1_jbk1a"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_74xhm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6mwv"]
 size = Vector2(2, 6)
 
-[sub_resource type="Animation" id="Animation_q6ivr"]
+[sub_resource type="Animation" id="Animation_2elpx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_myh37"]
 resource_name = "idle"
 length = 0.5
 loop_mode = 1
@@ -23,32 +38,17 @@ tracks/0/keys = {
 "values": [0, 3]
 }
 
-[sub_resource type="Animation" id="Animation_j2nee"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8bdyb"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b60o3"]
 _data = {
-"RESET": SubResource("Animation_j2nee"),
-"idle": SubResource("Animation_q6ivr")
+"RESET": SubResource("Animation_2elpx"),
+"idle": SubResource("Animation_myh37")
 }
 
 [node name="Fire" type="Area2D"]
 script = ExtResource("1_0phqk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_74xhm")
+shape = SubResource("RectangleShape2D_f6mwv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -60,5 +60,7 @@ region_rect = Rect2(31, 16, 65, 16)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
 libraries = {
-"": SubResource("AnimationLibrary_8bdyb")
+"": SubResource("AnimationLibrary_b60o3")
 }
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

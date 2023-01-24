@@ -15,10 +15,6 @@ var dead = false
 
 func _ready():
 	sprite.frame = svalue
-	
-func _process(_delta):
-	if Input.is_action_just_pressed("ui_text_submit"):
-		shoot()
 
 func explode():
 	$CollisionShape2D.set_deferred("disabled", true)

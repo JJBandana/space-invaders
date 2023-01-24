@@ -1,8 +1,13 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var speed : int = 200
 
 @onready var laser = preload("res://laser.tscn")
+
+@onready var enemyLaser = "res://redLaser.tscn"
+
 
 var direction
 var can_shoot = true
@@ -29,4 +34,12 @@ func shoot():
 	var laserNode = laser.instantiate()
 	laserNode.position = $Marker2D.global_position
 	get_parent().add_child(laserNode)
+
+func die():
+	get_tree().call_group("enemy", "set_process", false)
+	$AnimationPlayer.play("explode")
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "explode":
+		visible = false
 	

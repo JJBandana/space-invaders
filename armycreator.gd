@@ -16,3 +16,14 @@ func createArmy(width: int = 11):
 			enemiesArray.append(newAlien)
 			newAlien.army = self
 	print(enemiesArray)
+
+func selectShoot():
+	if enemiesArray:
+		var random_int = randi() % enemiesArray.size()
+		var random_alien = enemiesArray[random_int]
+		if is_instance_valid(random_alien):
+			random_alien.shoot()
+
+
+func _on_shoot_timer_timeout():
+	selectShoot()

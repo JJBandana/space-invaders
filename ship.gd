@@ -6,6 +6,11 @@ extends CharacterBody2D
 
 var direction
 var can_shoot = true
+var screen_size
+
+func _ready():
+	screen_size = get_viewport_rect().size
+	print(screen_size)
 
 func _process(_delta):
 	
@@ -15,6 +20,8 @@ func _process(_delta):
 	direction = Input.get_axis("left", "right")
 	
 	velocity.x = direction * speed
+	
+	position.x = clamp(position.x, 0 + 10, screen_size.x - 10)
 	
 	move_and_slide()
 	

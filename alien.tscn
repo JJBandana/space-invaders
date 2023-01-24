@@ -77,7 +77,6 @@ _data = {
 }
 
 [node name="Alien" type="CharacterBody2D" groups=["enemy"]]
-process_mode = 3
 script = ExtResource("1_4efr5")
 
 [node name="Sprite" type="Sprite2D" parent="."]

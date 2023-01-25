@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxluu1o6rw24a"]
+[gd_scene load_steps=5 format=3 uid="uid://dxluu1o6rw24a"]
 
+[ext_resource type="Script" path="res://world.gd" id="1_507ju"]
 [ext_resource type="Texture2D" uid="uid://dpkrep7rj50vt" path="res://assets/SpaceInvaders_Background.png" id="1_xqwg7"]
 [ext_resource type="PackedScene" uid="uid://b2fbfucxp48js" path="res://ship.tscn" id="2_50j5k"]
 [ext_resource type="PackedScene" uid="uid://b53neemxli8kw" path="res://newarmy.tscn" id="5_80t8q"]
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_507ju")
 
-[node name="SpaceInvadersBackground" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 2
 texture = ExtResource("1_xqwg7")
@@ -16,5 +18,22 @@ region_rect = Rect2(1, 1, 256, 224)
 
 [node name="Ship" parent="." instance=ExtResource("2_50j5k")]
 position = Vector2(20, 210)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_direction = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_right = 20.0
+offset_bottom = 244.0
+color = Color(1, 0.12549, 0.227451, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_direction = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 236.0
+offset_right = 256.0
+offset_bottom = 244.0
+color = Color(1, 0.12549, 0.227451, 1)
 
 [node name="Army" parent="." instance=ExtResource("5_80t8q")]

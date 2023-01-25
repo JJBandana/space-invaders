@@ -9,5 +9,7 @@ script = ExtResource("1_n71l2")
 autostart = true
 
 [node name="RunTimer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="RunTimer" to="." method="_on_run_timer_timeout"]

@@ -20,3 +20,9 @@ func _on_body_entered(body):
 
 func _on_tree_exiting():
 	player.can_shoot = true
+
+
+func _on_area_entered(area):
+	if area.is_in_group("enemyLaser"):
+		area.explotion()
+		queue_free()

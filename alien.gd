@@ -10,8 +10,6 @@ class_name Alien
 
 var army = null
 
-var dead = false
-
 @export var svalue : int = 0
 
 func _ready():
@@ -31,8 +29,8 @@ func resumeAnimation():
 func explode():
 	$CollisionShape2D.set_deferred("disabled", true)
 	animation_player.play("Die")
-	dead = true
 	army.enemiesArray.erase(self)
+	army.alienKilled()
 	
 func delete():
 	visible = false
@@ -41,3 +39,7 @@ func shoot():
 	var laserNode = redLaser.instantiate()
 	laserNode.position = marker.global_position
 	get_parent().get_parent().add_child(laserNode)
+
+func lessEasy():
+	if army.enemiesDead % 5 == 0:
+		animation_player.playback_speed += 0.1

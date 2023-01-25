@@ -18,6 +18,3 @@ region_rect = Rect2(1, 1, 256, 224)
 position = Vector2(20, 210)
 
 [node name="Army" parent="." instance=ExtResource("5_80t8q")]
-
-[node name="SpawnPosition" type="Marker2D" parent="."]
-position = Vector2(20, 210)

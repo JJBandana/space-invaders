@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://alien.gd" id="1_4efr5"]
 [ext_resource type="Texture2D" uid="uid://fcodyj6pjpm1" path="res://assets/SpaceInvaders.png" id="1_pqgy1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktqa2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8eu1"]
 size = Vector2(11, 9)
 
-[sub_resource type="Animation" id="Animation_xj2kt"]
+[sub_resource type="Animation" id="Animation_1qeaf"]
 resource_name = "Die"
 length = 0.4
 loop_mode = 1
@@ -37,7 +37,7 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_uve2l"]
+[sub_resource type="Animation" id="Animation_kuv7e"]
 resource_name = "Idle"
 length = 2.0
 loop_mode = 1
@@ -54,7 +54,7 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="Animation" id="Animation_jjgo4"]
+[sub_resource type="Animation" id="Animation_v40fq"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -69,11 +69,11 @@ tracks/0/keys = {
 "values": [8]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kxx1h"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_an8go"]
 _data = {
-"Die": SubResource("Animation_xj2kt"),
-"Idle": SubResource("Animation_uve2l"),
-"RESET": SubResource("Animation_jjgo4")
+"Die": SubResource("Animation_1qeaf"),
+"Idle": SubResource("Animation_kuv7e"),
+"RESET": SubResource("Animation_v40fq")
 }
 
 [node name="Alien" type="CharacterBody2D" groups=["enemy"]]
@@ -91,12 +91,12 @@ region_rect = Rect2(0, 0, 48, 80)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
 position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_ktqa2")
+shape = SubResource("RectangleShape2D_u8eu1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
 libraries = {
-"": SubResource("AnimationLibrary_kxx1h")
+"": SubResource("AnimationLibrary_an8go")
 }
 
 [node name="Marker2D" type="Marker2D" parent="."]

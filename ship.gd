@@ -5,8 +5,8 @@ class_name Player
 @export var speed : int = 200
 
 @onready var laser = preload("res://laser.tscn")
-
 @onready var enemyLaser = "res://redLaser.tscn"
+@onready var spawnLocation = Vector2(20, 210)
 
 
 var direction
@@ -36,10 +36,15 @@ func shoot():
 	get_parent().add_child(laserNode)
 
 func die():
-	get_tree().call_group("enemy", "set_process", false)
+	get_tree().call_group("enemy", "stopAnimation")
+	set_process(false)
 	$AnimationPlayer.play("explode")
+	can_shoot = false
 
-func _on_animation_player_animation_finished(anim_name):
-	if anim_name == "explode":
-		visible = false
-	
+func goToSpawn():
+	var tween = create_tween()
+	tween.tween_property(self, "position", spawnLocation, 1)
+	await get_tree().create_timer(1.0).timeout
+	get_tree().call_group("enemy", "resumeAnimation")
+	can_shoot = true
+	set_process(true)

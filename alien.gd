@@ -6,6 +6,7 @@ class_name Alien
 @onready var animation_player = $AnimationPlayer
 @onready var redLaser = preload("res://redLaser.tscn")
 @onready var marker = $Marker2D
+@onready var parent = get_parent()
 
 var army = null
 
@@ -15,6 +16,17 @@ var dead = false
 
 func _ready():
 	sprite.frame = svalue
+
+func stopAnimation():
+	if is_instance_valid(self):
+		if animation_player.current_animation == "Die":
+			queue_free()
+	animation_player.stop()
+	parent.timerOff()
+
+func resumeAnimation():
+	animation_player.play("Idle")
+	parent.timerOn()
 
 func explode():
 	$CollisionShape2D.set_deferred("disabled", true)
@@ -26,7 +38,6 @@ func delete():
 	visible = false
 	
 func shoot():
-	print("shot")
 	var laserNode = redLaser.instantiate()
 	laserNode.position = marker.global_position
 	get_parent().get_parent().add_child(laserNode)

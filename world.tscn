@@ -19,21 +19,4 @@ region_rect = Rect2(1, 1, 256, 224)
 [node name="Ship" parent="." instance=ExtResource("2_50j5k")]
 position = Vector2(20, 210)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-layout_direction = 1
-anchors_preset = -1
-anchor_right = 1.0
-offset_right = 20.0
-offset_bottom = 244.0
-color = Color(1, 0.12549, 0.227451, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="."]
-layout_direction = 1
-anchors_preset = -1
-anchor_right = 1.0
-offset_left = 236.0
-offset_right = 256.0
-offset_bottom = 244.0
-color = Color(1, 0.12549, 0.227451, 1)
-
 [node name="Army" parent="." instance=ExtResource("5_80t8q")]

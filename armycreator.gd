@@ -14,6 +14,7 @@ func alienKilled():
 	print(enemiesDead)
 	if enemiesDead % 5 == 0:
 		$RunTimer.wait_time -= 0.1
+		print($RunTimer.wait_time)
 
 func createArmy(width: int = 11):
 	for j in range(5):
